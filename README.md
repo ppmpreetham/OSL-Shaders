@@ -8,3 +8,18 @@ For an example, in math, if we want to mix two functions $f(x)$ and $g(x)$, we u
 
 ![2 functions](https://github.com/Preetham-ai/OSL-Shaders/assets/75422607/6e09eb74-0e7a-4494-b296-d4703f20689b)
 
+## Texture Coordinate Node
+
+The Texture coordinate node provides the:
+
+- Object
+- Normal
+- UV
+- Incident
+- Reflection
+
+### Working principle of Reflection node
+
+We can use this formula to derive the reflection node using the incident node.
+
+$\mathbf{r} = \mathbf{i} - 2 \mathbf{n}(\mathbf{n} \cdot \mathbf{i})$
