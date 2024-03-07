@@ -1,0 +1,9 @@
+shader TextureCoordinate(
+    output point Object = P,
+    output normal Normal = N,
+    output vector UV = vector(u,v,0),
+    output vector Incident = I,
+    output vector Reflection = 0,
+){
+    Reflection = Incident - 1*(dot(Incident,Normal))*Normal;
+}

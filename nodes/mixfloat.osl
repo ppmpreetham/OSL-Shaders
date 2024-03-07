@@ -1,0 +1,8 @@
+shader mix(
+    float Factor = 0.5,
+    float A = 0,
+    float B = 0,
+    output float Result = 0
+){
+    Result = Factor * B + (1 - Factor) * A;
+}

@@ -1,0 +1,13 @@
+shader Math(
+    float A = 0.00,
+    float B = 0.00,
+    output float Add = 0.00,
+    output float Subtract = 0.00,
+    output float Multiply = 0.00,
+    output float Divide = 0.00,
+){
+    Add = A + B;
+    Subtract = A - B;
+    Multiply = A * B;
+    Divide = A / B;
+}

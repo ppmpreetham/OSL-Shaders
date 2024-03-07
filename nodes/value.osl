@@ -1,6 +1,6 @@
 shader Value(
-float val = 0,
-output float Value = 0
+    float val = 0,
+    output float Value = 0
 ){
-Value = val;
+    Value = val;
 }
