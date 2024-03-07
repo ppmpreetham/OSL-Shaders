@@ -1,0 +1,6 @@
+shader RGB_to_BW(
+    color Color = color(0,0,0),
+    output color Val = color(0,0,0),
+){
+    Val = color(dot(vector(Color), vector(0.2126, 0.7152, 0.0722)));
+}

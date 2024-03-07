@@ -1,0 +1,60 @@
+shader Blackbody(
+    float Temperature = 6500.0,
+    output color Color = color(0, 0, 0)
+)
+{
+    float temp = Temperature / 100.0;
+    float Red = 0, Green = 0, Blue = 0;
+
+    if (temp <= 66) {
+        Red = 255;
+    } else {
+        Red = temp - 60;
+        Red = 329.698727466 * pow(Red, -0.1332047592);
+        if (Red < 0) {
+            Red = 0;
+        }
+        if (Red > 255) {
+            Red = 255;
+        }
+    }
+
+    if (temp <= 66) {
+        Green = temp;
+        Green = 99.4708025861 * log(Green) - 161.1195681661;
+        if (Green < 0) {
+            Green = 0;
+        }
+        if (Green > 255) {
+            Green = 255;
+        }
+    } else {
+        Green = temp - 60;
+        Green = 288.1221695283 * pow(Green, -0.0755148492);
+        if (Green < 0) {
+            Green = 0;
+        }
+        if (Green > 255) {
+            Green = 255;
+        }
+    }
+
+    if (temp >= 66) {
+        Blue = 255;
+    } else {
+        if (temp <= 19) {
+            Blue = 0;
+        } else {
+            Blue = temp - 10;
+            Blue = 138.5177312231 * log(Blue) - 305.0447927307;
+            if (Blue < 0) {
+                Blue = 0;
+            }
+            if (Blue > 255) {
+                Blue = 255;
+            }
+        }
+    }
+
+    Color = color(Red / 255.0, Green / 255.0, Blue / 255.0);
+}
