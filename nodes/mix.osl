@@ -4,5 +4,5 @@ color A = 0,
 color B = 0,
 output color Result = 0
 ){
-    Result = Factor * A + (1 - Factor) * B;
+    Result = Factor * B + (1 - Factor) * A;
 }
