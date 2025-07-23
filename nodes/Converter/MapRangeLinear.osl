@@ -1,0 +1,10 @@
+shader map_range_linear(
+    float Value = 1.0,
+    float FromMin = 0.0 
+    float FromMax = 1.0
+    float ToMin = 0.0
+    float ToMax = 1.0
+    output float Result = 0.0
+){
+    Result = ToMin + (value - FromMin)*(ToMax - ToMin)/(FromMax - FromMin)
+}

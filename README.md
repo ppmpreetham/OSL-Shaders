@@ -3,7 +3,7 @@ An attempt to recreate the nodes in blender using OSL
 
 ## Mix nodes
 
-This is pretty similar to linearly mixing any two different things with a mix factor.
+This makes use of `Linear Interpolation (LERP)` to mix two values together. The mix factor $t$ is used to determine how much of each value to take.
 For an example, in math, if we want to mix two functions $f(x)$ and $g(x)$, we usually do it by taking a mix factor $t$, and the output is going to be a new function $h(x) = tf(x)+(1-t)g(x)$. Here, $0\lt t\lt 1$.
 
 ![2 functions](https://github.com/Preetham-ai/OSL-Shaders/assets/75422607/6e09eb74-0e7a-4494-b296-d4703f20689b)
@@ -37,3 +37,18 @@ This doesn't look like the Blender's Blackbody node but produces quite similar r
 According to the [Stefan-Boltzmann law](https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_law), hotter objects emit more high-frequency radiation compared to cooler objects. As blue light has a higher frequency than red light, hot objects tend to emit bluish light, warm objects emit white light (a combination of blue and red), and cool objects emit red light.
 
 Used the algorithm by [Tanner Helland](https://tannerhelland.com/2012/09/18/convert-temperature-rgb-algorithm-code.html)
+
+## MapRange Node
+### Linear Interpolation (LERP)
+This makes use of the linear interpolation formula to map a value from one range to another. The formula is as follows:
+
+$$
+\text{Result} = \text{ToMin} + \left(\frac{x - \text{FromMin}}{\text{FromMax} - \text{FromMin}}\right) \times (\text{ToMax} - \text{ToMin})
+$$
+
+Where:
+
+* `x` is the input
+* `FromMin` and `FromMax` define the **original** range
+* `ToMin` and `ToMax` define the **new** target range
+* Result is the mapped value
